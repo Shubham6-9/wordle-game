@@ -33,11 +33,6 @@ button {
     border: 2px solid green;
 }
 
-#m:hover {
-    background-color: lightyellow;
-    border: 2px solid orange;
-}
-
 #h:hover {
     background-color: lightpink;
     border: 2px solid red;

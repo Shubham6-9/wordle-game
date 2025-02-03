@@ -1,0 +1,29 @@
+/* Small Mobile */
+@media (max-width: 320px) {
+    #hint{
+        padding: 8px;
+        font-size: 18px;
+        text-align: left;
+    }
+    #guess{
+        width: auto;
+    }
+
+}
+
+/* Med and Large Mobile */
+@media (min-width: 321px) and (max-width: 425px){
+    #guess{
+        width: auto;
+    }
+}
+
+/* Small Laptop and Above */
+@media (min-width: 1024px){
+    #main>div:first-child{
+        font-size: 20px;
+    }
+    #main>div:first-child p{
+        font-size: 20px;
+    }
+}

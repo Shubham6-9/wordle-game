@@ -163,7 +163,7 @@ setTimeout(() => {
     document.getElementById("reset").addEventListener('click', () => window.location.href = "./index.html")
     document.getElementById("guess").style.display = "none"
     document.getElementById("back").style.display = "block"
-    document.getElementById("back").addEventListener('click', () => window.location.href = "../level page/index.html")
+    document.getElementById("back").addEventListener('click', () => window.location.href = "../index.html")
 }, 121000);
 function time() {
     count++;
