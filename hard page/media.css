@@ -1,29 +1,141 @@
-/* Small Mobile */
-@media (max-width: 320px) {
-    #hint{
-        padding: 8px;
-        font-size: 18px;
-        text-align: left;
-    }
-    #guess{
-        width: auto;
+@media (max-width: 374px) {
+    h1 {
+        font-size: 2.5em;
+        margin-top: 25px;
+        margin-bottom: 15px;
     }
 
+    #main {
+        width: 95%;
+        padding: 20px;
+        gap: 15px;
+    }
+
+    #hint {
+        font-size: 1.3em;
+        text-align: center;
+        margin-right: 0;
+        margin-bottom: 10px;
+        padding: 6px 10px;
+    }
+
+    #main > div:first-child {
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 15px;
+    }
+
+    #main > div:first-child p#time {
+        margin-top: 10px;
+        font-size: 1.3em;
+    }
+
+    #correctWord {
+        font-size: 2.2em;
+        letter-spacing: 2px;
+    }
+
+    #score {
+        font-size: 1.8em;
+    }
+
+    #bottom {
+        flex-direction: column;
+        gap: 12px;
+        padding: 15px;
+    }
+
+    #guess {
+        width: 90%;
+        height: 50px;
+        font-size: 1.2em;
+    }
+
+    #submit,
+    #reset,
+    #back {
+        width: 85%;
+        height: 45px;
+        font-size: 1.1em;
+    }
 }
 
-/* Med and Large Mobile */
-@media (min-width: 321px) and (max-width: 425px){
-    #guess{
-        width: auto;
+/* Medium Mobile */
+@media (min-width: 375px) and (max-width: 767px) {
+    h1 {
+        font-size: 2.8em;
+    }
+
+    #main {
+        width: 90%;
+        padding: 25px;
+    }
+
+    #hint {
+        font-size: 1.4em;
+    }
+
+    #correctWord {
+        font-size: 2.5em;
+    }
+
+    #bottom {
+        padding: 18px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    #guess {
+        width: 280px;
+    }
+
+    #submit,
+    #reset,
+    #back {
+        width: 120px;
     }
 }
 
-/* Small Laptop and Above */
-@media (min-width: 1024px){
-    #main>div:first-child{
-        font-size: 20px;
+/* Tablet and Small Laptop */
+@media (min-width: 768px) and (max-width: 1023px) {
+    #main {
+        max-width: 750px; /* Allow wider on tablets */
     }
-    #main>div:first-child p{
-        font-size: 20px;
+    #guess {
+        width: 400px;
+    }
+}
+
+/* Large Laptop and Desktop */
+@media (min-width: 1024px) {
+    #main {
+        max-width: 650px;
+    }
+
+    #main > div:first-child p,
+    #main > div:first-child p#time {
+        font-size: 1.3em;
+    }
+
+    #hint {
+        font-size: 1.7em;
+    }
+
+    #correctWord {
+        font-size: 3em;
+    }
+
+    #score {
+        font-size: 2.5em;
+    }
+
+    #guess {
+        width: 350px;
+    }
+
+    #submit,
+    #reset,
+    #back {
+        width: 150px;
     }
 }

@@ -1,111 +1,346 @@
+/* General Body Styles */
 body {
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Poppins', sans-serif; /* Modern, readable font */
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%); /* Soft, inviting gradient */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    color: #333;
+    padding-bottom: 100px; /* Space for the fixed bottom bar */
+    box-sizing: border-box; /* Include padding in element's total width and height */
 }
 
+/* Page Title */
 h1 {
     text-align: center;
+    color: #2c3e50; /* Darker, more prominent color */
+    margin-top: 30px;
+    margin-bottom: 20px;
+    font-size: 2.8em;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.05);
 }
 
+/* Main Game Container */
 #main {
-    width: 100%;
-    margin: auto;
-    margin-bottom: 100px;
-    text-align: center;
-    background-color: lightblue;
-    border: 2px solid blue;
-    border-radius: 25px;
+    width: 90%; /* Responsive width */
+    max-width: 600px; /* Maximum width for larger screens */
+    margin: 20px auto 50px auto; /* Adjust margin-bottom for better spacing */
+    background-color: #ffffff; /* Clean white background */
+    border: none;
+    border-radius: 20px; /* Softer rounded corners */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1); /* Elegant shadow */
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px; /* Space between internal divs */
 }
 
-#main>div:first-child {
+/* Top Section (Hint and Time) */
+#main > div:first-child {
     display: flex;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-between; /* Space out hint and time */
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee; /* Subtle separator */
 }
 
-#main>div:first-child p {
-    margin: 0px;
-    font-weight: 800;
-    color: mediumblue;
-    margin-right: 5px;
-    font-size: 16px;
+#main > div:first-child p {
+    margin: 0;
+    font-weight: 600;
+    color: #555;
+    font-size: 1.1em;
+    display: flex;
+    align-items: center;
+}
+
+#main > div:first-child p#time {
+    font-size: 1.3em;
+    color: #e74c3c; /* Red for time, making it stand out */
+    font-weight: 700;
 }
 
 #hint {
-    letter-spacing: -1px;
-    color: blueviolet;
-    padding: 0px 8px 0px 8px;
+    letter-spacing: normal; /* Normal letter spacing for readability */
+    color: #8e44ad; /* A more vibrant purple */
+    padding: 5px 10px;
+    font-size: 1.4em; /* Larger hint */
+    font-weight: 600;
+    background-color: #f8f8f8;
+    border-radius: 8px;
+    text-align: center; /* Center hint text */
+    flex-grow: 1; /* Allows hint to take available space */
+    margin-right: 15px; /* Space between hint and time */
 }
 
+/* Result Section */
+#main > div:nth-child(2) {
+    text-align: center;
+    padding: 15px 0;
+}
+
+h4 {
+    font-size: 1.6em;
+    color: #34495e;
+    margin-bottom: 10px;
+}
+
+#correctWord {
+    font-weight: 800;
+    font-size: 2.2em; /* Larger correct word */
+    letter-spacing: 2px; /* More legible letter spacing */
+    color: #27ae60; /* Green for correct word */
+    margin: 0; /* Remove negative margin */
+    display: block; /* Ensure it takes its own line */
+    text-transform: uppercase; /* Uppercase for correct word */
+}
+
+/* Score Section */
+#main > div:last-child {
+    text-align: center;
+    padding-top: 15px;
+    border-top: 1px solid #eee; /* Subtle separator */
+}
+
+#score {
+    font-size: 1.8em;
+    color: #f39c12; /* Orange for score */
+    font-weight: 700;
+}
+
+/* Bottom Input and Buttons Container */
 #bottom {
-    height: 80px;
+    height: auto; /* Auto height to fit content */
     width: 100%;
-    background-color: white;
+    background-color: #ffffff;
     display: flex;
-    justify-content: space-around;
+    flex-wrap: wrap; /* Allow items to wrap on smaller screens */
+    justify-content: center; /* Center items horizontally */
     align-items: center;
     position: fixed;
-    bottom: 0px;
-    left: 0px;
+    bottom: 0;
+    left: 0;
+    padding: 15px 10px; /* Add padding */
+    box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.05); /* Shadow for the bottom bar */
+    gap: 15px; /* Space between input and buttons */
+    box-sizing: border-box;
 }
 
+#bottom > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px; /* Space between input and error messages */
+}
+
+/* Input Field */
 #guess {
-    height: 40px;
-    width: 300px;
-    font-size: 18px;
-    background-color: none;
-    border: 2px solid black;
-    color: blue;
-    padding-left: 20px;
+    height: 50px; /* Taller input */
+    width: 280px; /* Fixed width for better control */
+    max-width: 90%; /* Responsive max width */
+    font-size: 1.2em;
+    background-color: #f9f9f9; /* Light background */
+    border: 2px solid #bdc3c7; /* Softer border */
+    color: #3498db; /* Blue text */
+    padding-left: 15px;
     border-radius: 10px;
+    outline: none; /* Remove outline on focus */
+    transition: border-color 0.3s ease;
 }
 
+#guess:focus {
+    border-color: #3498db; /* Highlight on focus */
+}
+
+/* Buttons */
 #submit,
 #reset,
 #back {
-    height: 40px;
-    width: 100px;
-    border: 1px solid;
-    background-color: black;
+    height: 45px; /* Consistent height */
+    width: 120px; /* Consistent width */
+    border: none; /* No border */
+    background-color: #3498db; /* Primary blue for action buttons */
     color: white;
-    border-radius: 5px;
-    font-size: 18px;
-    transition: 0.5s ease;
+    border-radius: 8px; /* Softer rounded corners */
+    font-size: 1.1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
 #submit:hover,
 #reset:hover,
 #back:hover {
-    background-color: white;
-    color: black;
+    background-color: #2980b9; /* Darker blue on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+#reset {
+    background-color: #e67e22; /* Orange for reset */
+}
+
+#reset:hover {
+    background-color: #d35400;
+}
+
+#back {
+    background-color: #7f8c8d; /* Grey for back */
+}
+
+#back:hover {
+    background-color: #5d6d7e;
 }
 
 #reset,
 #back {
-    display: none;
+    display: none; /* Keep hidden by default as per original HTML */
 }
 
-h4 {
-    font-size: 20px;
-}
-
-#correctWord {
-    font-weight: 900;
-    font-size: 20px;
-    display: inline-block;
-    letter-spacing: -2px;
-    margin: -20px;
-    color: red;
-}
-
-#main>div:last-child {
-    /* border: 1px solid red; */
-    margin-top: 300px;
-}
-
+/* Error Messages */
 #input-err,
 #input-err2 {
-    margin: 0px;
-    color: red;
-    font-weight: 600;
-    display: none;
+    margin: 0;
+    color: #e74c3c; /* Red for error messages */
+    font-weight: 500;
+    font-size: 0.9em;
+    display: none; /* Hidden by default */
+}
+
+/* --- Media Queries for Responsiveness --- */
+
+/* Small Mobile (e.g., iPhone 5/SE) */
+@media (max-width: 374px) {
+    h1 {
+        font-size: 2.2em;
+    }
+
+    #main {
+        width: 95%;
+        padding: 15px;
+    }
+
+    #hint {
+        font-size: 1.2em;
+        text-align: center;
+        margin-right: 0; /* Remove margin for better fit */
+        margin-bottom: 10px; /* Add some bottom margin */
+    }
+
+    #main > div:first-child {
+        flex-direction: column; /* Stack hint and time */
+        align-items: center;
+    }
+
+    #main > div:first-child p#time {
+        margin-top: 10px;
+    }
+
+    #correctWord {
+        font-size: 1.8em;
+    }
+
+    #bottom {
+        flex-direction: column; /* Stack input and buttons */
+        gap: 10px;
+        padding: 10px;
+    }
+
+    #guess {
+        width: 90%; /* Wider on small screens */
+        height: 45px;
+        font-size: 1.1em;
+    }
+
+    #submit,
+    #reset,
+    #back {
+        width: 80%; /* Wider buttons */
+        height: 40px;
+        font-size: 1em;
+    }
+}
+
+/* Medium Mobile */
+@media (min-width: 375px) and (max-width: 767px) {
+    h1 {
+        font-size: 2.5em;
+    }
+
+    #main {
+        width: 90%;
+        padding: 20px;
+    }
+
+    #hint {
+        font-size: 1.3em;
+    }
+
+    #correctWord {
+        font-size: 2em;
+    }
+
+    #bottom {
+        padding: 15px;
+        flex-wrap: wrap; /* Allow wrapping */
+        justify-content: center;
+    }
+
+    #guess {
+        width: 250px;
+    }
+
+    #submit,
+    #reset,
+    #back {
+        width: 100px;
+    }
+}
+
+/* Tablet and Small Laptop */
+@media (min-width: 768px) and (max-width: 1023px) {
+    #main {
+        max-width: 700px;
+    }
+    #guess {
+        width: 350px;
+    }
+}
+
+/* Large Laptop and Desktop */
+@media (min-width: 1024px) {
+    #main {
+        max-width: 600px; /* Maintain optimal reading width */
+    }
+
+    #main > div:first-child p,
+    #main > div:first-child p#time {
+        font-size: 1.2em;
+    }
+
+    #hint {
+        font-size: 1.5em;
+    }
+
+    #correctWord {
+        font-size: 2.5em;
+    }
+
+    #score {
+        font-size: 2em;
+    }
+
+    #guess {
+        width: 300px;
+    }
+
+    #submit,
+    #reset,
+    #back {
+        width: 130px;
+    }
 }
